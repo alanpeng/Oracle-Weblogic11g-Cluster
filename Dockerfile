@@ -8,9 +8,10 @@ ADD download_jdk6.sh /root
 ADD download_weblogic1036.sh /root
 ADD wls-silent.xml /root
 
-RUN ln -s /root/download_jdk6.sh /download_jdk6.sh && \
-  ln -s /root/download_weblogic1036.sh /download_weblogic1036.sh && \
-  ln -s /root/wls-silent.xml && \
+RUN mv /root/download_jdk6.sh / && \
+  mv /root/download_weblogic1036.sh / && \
+  mv /root/wls-silent.xml / && \
+  chmod +x /root/*.sh && \
   /download_jdk6.sh && \
   /download_weblogic1036.sh && \
   rm /download_jdk6.sh /download_weblogic1036.sh && \
