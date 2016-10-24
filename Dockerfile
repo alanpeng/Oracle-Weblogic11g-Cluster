@@ -17,7 +17,7 @@ RUN chmod +x ./*.sh && \
   ./jdk-6u45-linux-x64.bin && \
   rm jdk-6u45-linux-x64.bin && \
   mv jdk1.6.0_45 /root/jdk && \
-  /root/jdk/jdk1.6.0_45/bin/java -jar wls1036_generic.jar -mode=silent -silent_xml=/root/wls-silent.xml && \ 
+  /root/jdk/jdk1.6.0_45/bin/java -jar wls1036_generic.jar -mode=silent -silent_xml=./wls-silent.xml && \ 
   rm /root/wls1036_generic.jar /root/wls-silent.xml 
 
 ADD create-wls-domain.py /root/Oracle
