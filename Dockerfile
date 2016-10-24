@@ -4,11 +4,14 @@ MAINTAINER Alan Peng <peng.alan@gmail.com>
 
 USER root
 
-ADD download_jdk6.sh /
-ADD download_weblogic1036.sh /
-ADD wls-silent.xml /
+ADD download_jdk6.sh /root
+ADD download_weblogic1036.sh /root
+ADD wls-silent.xml /root
 
-RUN /download_jdk6.sh && \
+RUN ln -s /root/download_jdk6.sh /download_jdk6.sh && \
+  ln -s /root/download_weblogic1036.sh /download_weblogic1036.sh && \
+  ln -s /root/wls-silent.xml && \
+  /download_jdk6.sh && \
   /download_weblogic1036.sh && \
   rm /download_jdk6.sh /download_weblogic1036.sh && \
   mkdir /root/jdk && \
