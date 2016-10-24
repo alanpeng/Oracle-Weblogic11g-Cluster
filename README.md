@@ -1,10 +1,6 @@
 # Oracle-Weblogic11g-Cluster-Rancher
 Oracle WebLogic 11g version 1036 Dockerfile for cluster deployment on Rancher.
 
-Info:
-
-This template creates WebLogic server (10.3.6) cluster instances.
-
 Usage:
 
 One AdminServer with volume mount on local host or NFS shared storage and scalable ManagedServers in one Cluster.
