@@ -7,6 +7,7 @@ USER root
 ADD download_jdk6.sh /root
 ADD download_weblogic1036.sh /root
 ADD wls-silent.xml /root
+ADD entrypoint.sh /root
 
 RUN chmod +x /root/*.sh && \
   /root/download_jdk6.sh && \
@@ -24,7 +25,6 @@ ADD create-wls-domain.py /root/Oracle
 ADD create_managed_server.py /root/Oracle
 ADD ManagedServer.properties /root/Oracle
 ADD register_managed_server.sh /root/Oracle
-ADD entrypoint.sh /
 
 ENV CONFIG_JVM_ARGS '-Djava.security.egd=file:/dev/./urandom'
 
@@ -32,4 +32,4 @@ WORKDIR /root/Oracle/Middleware
 
 ENV PATH $PATH:/root/jdk/jdk1.6.0_45/bin:/root/Oracle/Middleware/oracle_common/common/bin:/root/Oracle/Middleware/user_projects/domains/base_domain/bin
 
-CMD ["/entrypoint.sh"]
+CMD ["/root/entrypoint.sh"]
