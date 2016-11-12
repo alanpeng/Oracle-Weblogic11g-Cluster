@@ -25,6 +25,7 @@ ADD create-wls-domain.py /root/Oracle
 ADD create_managed_server.py /root/Oracle
 ADD ManagedServer.properties /root/Oracle
 ADD register_managed_server.sh /root/Oracle
+RUN chmod +x /root/Oracle/*.py && chmod +x /root/Oracle/*.sh
 
 ENV CONFIG_JVM_ARGS '-Djava.security.egd=file:/dev/./urandom'
 
